@@ -29,7 +29,7 @@ const BottomBar: React.FC = () => {
   const [tab, setTab] = useState(1);
 
   return (
-    <div className="bg-white max-h-[4.4rem] px-6  py-[5px]">
+    <div className="bg-white max-h-[4.4rem] px-6 py-[5px]">
       <ul className="flex relative justify-between items-center">
         <span
           className={`bg-white duration-500 border-[5px] h-16 w-16 absolute -top-[30px] rounded-full flex justify-center items-center`}
