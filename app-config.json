@@ -1,11 +1,14 @@
 {
   "app": {
-    "headerTitle": "zmp-blank-templates",
+    "title": "",
+    "headerTitle": "",
+    "headerColor": "#1843EF",
     "textColor": "white",
     "textAlign": "left",
     "statusBarColor": "#1843EF",
+    "leftButton": "none",
     "statusBar": "normal",
-    "actionBarHidden": false,
+    "actionBarHidden": true,
     "hideAndroidBottomNavigationBar": false,
     "hideIOSSafeAreaBottom": false
   },

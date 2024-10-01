@@ -9,10 +9,10 @@ const HomeSearch = () => {
       <Button
         shape="round"
         type="outline"
-        className="!border-gray-500 w-full text-left"
-        icon={<IconSearch className="text-gray-500" />}
+        className="!border-gray-500 w-full items-center flex flex-row justify-start text-left !h-[44px]"
+        icon={<IconSearch fontSize={22} className="text-gray-500" />}
       >
-        <span className="text-gray-500">Search</span>
+        <span className="text-gray-500 text-[16px]">Search</span>
       </Button>
       <div
         className="rounded-full flex flex-row justify-center ml-[10px]"
@@ -20,7 +20,7 @@ const HomeSearch = () => {
           backgroundColor: COLORS?.ACTION,
         }}
       >
-        <IconMenu className="m-[10px] text-white" />
+        <IconMenu fontSize={25} className="m-[10px] text-white" />
       </div>
     </div>
   );
