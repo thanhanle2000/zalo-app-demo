@@ -15,14 +15,14 @@ const Content = ({ children }: Props) => {
     <Page className="page flex flex-col items-center bg-white">
       <div className="flex flex-row justify-between w-full">
         <div
-          className="border border-[#EFAE09] w-[40px] h-[40px] flex flex-row justify-center items-center p-[5px] rounded-full"
+          className="border border-[#EFAE09] w-[30px] h-[30px] flex flex-row justify-center items-center p-[5px] rounded-full"
           onClick={() => navigate(-1)}
         >
-          <IconArrowLeft fontSize={22} />
+          <IconArrowLeft fontSize={16} />
         </div>
-        <img src={logo} className="w-[90px]" />
-        <div className="border border-[#EFAE09] w-[40px] h-[40px] flex flex-row justify-center items-center p-[5px] rounded-full">
-          <IconHeart fontSize={22} />
+        <img src={logo} className="w-[80px]" />
+        <div className="border border-[#EFAE09] w-[30px] h-[30px] flex flex-row justify-center items-center p-[5px] rounded-full">
+          <IconHeart fontSize={16} />
         </div>
       </div>
       {children}

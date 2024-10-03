@@ -52,17 +52,18 @@ const BottomBar_V1: React.FC = () => {
 
   return (
     <div
-      className="max-h-[4.4rem] px-6 py-[5px] rounded-t-xl"
+      className="max-h-[50px] px-6 py-[2px] rounded-t-xl"
       style={{
         backgroundColor: COLORS?.BG,
       }}
     >
       <ul className="flex relative justify-between items-center">
         <span
-          className="bg-white duration-500 border-[4px] h-16 w-16 absolute -top-[34px] rounded-full flex justify-center items-center"
+          className="bg-white duration-500 border-[4px] h-[55px] w-[55px] absolute -top-[28px] rounded-full flex justify-center items-center"
           style={{
-            left: `calc((100% / ${Menus.length}) * ${active} + (100% / ${Menus.length * 2
-              }) - 32px)`,
+            left: `calc((100% / ${Menus.length}) * ${active} + (100% / ${
+              Menus.length * 2
+            }) - 32px)`,
           }}
         >
           <span className="text-orange-500 text-2xl">{Menus[active].icon}</span>
@@ -77,8 +78,9 @@ const BottomBar_V1: React.FC = () => {
               onClick={() => onPage(menu, i)}
             >
               <span
-                className={`text-xl cursor-pointer duration-200 ${i === active ? "text-transparent" : "text-white"
-                  }`}
+                className={`text-xl cursor-pointer duration-200 ${
+                  i === active ? "text-transparent" : "text-white"
+                }`}
               >
                 {menu?.icon}
               </span>

@@ -8,7 +8,7 @@ import { formatCurrency } from "ultils/helper";
 import { setProduct } from "../../../core/hook/recoil/recoil";
 
 const HomeProduct = () => {
-   //NAVIGATE
+  //NAVIGATE
   const navigate = useNavigate();
 
   // RECOIL
@@ -21,7 +21,7 @@ const HomeProduct = () => {
   };
 
   return (
-    <div className="grid grid-rows-2 grid-flow-col gap-[15px] relative">
+    <div className="grid grid-rows-2 grid-flow-col gap-[8px] relative">
       {productData?.data?.map((item) => (
         <div
           key={item?.id}
@@ -33,8 +33,8 @@ const HomeProduct = () => {
             alt={item?.label}
             className="m-[2px] rounded-[15px]"
           />
-          <div className="flex flex-row items-center justify-between px-[5px]">
-            <span className="font-medium text-[16px]">{item?.label}</span>
+          <div className="flex flex-row items-start justify-between px-[5px]">
+            <span className="font-medium text-[14px]">{item?.label}</span>
             <div className="flex flex-row items-center gap-[3px]">
               <IconStar fontSize={20} className="text-yellow-500" />
               <span className="text-gray-500 text-[16px]">{item?.rate}</span>
@@ -44,7 +44,7 @@ const HomeProduct = () => {
             <span className="text-[#82111A] text-[15px] font-semibold">
               {formatCurrency(item?.price)}
             </span>
-            <div className="flex flex-row items-center gap-[3px] text-gray-500">
+            <div className="flex flex-row items-center text-[13px] gap-[3px] text-gray-500">
               <span>Đã bán</span>
               <span>{item?.sale / 1000}k</span>
             </div>
