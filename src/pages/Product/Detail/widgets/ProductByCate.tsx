@@ -10,9 +10,9 @@ const ProductByCate = ({ productData, idActive }: Props) => {
   // DATA
   const data = productData?.filter((item: any) => item.id !== idActive);
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col mt-[5px]">
       <span className="text-[15px] font-semibold">Sản phẩm cùng danh mục</span>
-      <div className="flex flex-row gap-[8px] relative overflow-x-auto whitespace-nowrap scrollbar-hide">
+      <div className="flex flex-row gap-[8px] relative overflow-x-auto whitespace-nowrap scrollbar-hide mt-[5px]">
         {data?.map((item: any) => (
           <div
             key={item?.id}
