@@ -1,6 +1,10 @@
 import { IconHeart } from "@arco-design/web-react/icon";
+import { setProduct } from "core/hook/recoil/recoil";
+import { ROUTERS } from "core/routers/routers";
 import React, { memo } from "react";
+import { useRecoilState } from "recoil";
 import { formatCurrency } from "ultils/helper";
+import { useNavigate } from "zmp-ui";
 
 interface Props {
   productData: any;
@@ -9,24 +13,38 @@ interface Props {
 const ProductByCate = ({ productData, idActive }: Props) => {
   // DATA
   const data = productData?.filter((item: any) => item.id !== idActive);
+
+  //NAVIGATE
+  const navigate = useNavigate();
+
+  // RECOIL
+  const [_, setProducts] = useRecoilState(setProduct);
+
+  // ON NEXT PAGE
+  const onNextPage = (item: any) => {
+    setProducts(item);
+    navigate(ROUTERS?.DETAIL_PRODUCT);
+  };
+
   return (
     <div className="flex flex-col mt-[5px]">
       <span className="text-[15px] font-semibold">Sản phẩm cùng danh mục</span>
-      <div className="flex flex-row gap-[8px] relative overflow-x-auto whitespace-nowrap scrollbar-hide mt-[5px]">
+      <div className="flex flex-row gap-[8px] relative overflow-x-auto whitespace-nowrap scrollbar-hide mt-[10px]">
         {data?.map((item: any) => (
           <div
             key={item?.id}
             className="border border-gray-400 flex flex-col gap-[3px] rounded-[15px] p-[3px] relative "
             style={{ minWidth: "120px" }}
+            onClick={() => onNextPage(item)}
           >
             <img
               src={item?.img}
               alt={item?.label}
-              className="m-[2px] rounded-[15px] w-[100px]"
+              className="m-[2px] rounded-[15px]"
             />
-            <div className="flex flex-row items-start justify-between px-[5px]">
-              <span className="font-medium text-[14px]">{item?.label}</span>
-            </div>
+            <span className="font-medium text-[14px] truncate">
+              {item?.label}
+            </span>
             <div className="flex flex-col items-start justify-start text-left px-[5px]">
               <span className="text-[#82111A] text-[15px] font-semibold">
                 {formatCurrency(item?.price)}
@@ -36,8 +54,8 @@ const ProductByCate = ({ productData, idActive }: Props) => {
                 <span>{item?.sale / 1000}k</span>
               </div>
             </div>
-            <div className="absolute top-2 right-3 rounded-full flex flex-row items-center bg-white w-[30px] h-[30px]">
-              <IconHeart className="text-yellow-500 m-auto" fontSize={23} />
+            <div className="absolute top-2 right-3 rounded-full flex flex-row items-center bg-white w-[20px] h-[20px]">
+              <IconHeart className="text-yellow-500 m-auto" fontSize={16} />
             </div>
           </div>
         ))}

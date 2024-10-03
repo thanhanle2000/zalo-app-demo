@@ -1,6 +1,6 @@
 import { IconArrowLeft, IconHeart } from "@arco-design/web-react/icon";
 import React, { memo, ReactNode } from "react";
-import { Page, useNavigate } from "zmp-ui";
+import { useNavigate } from "zmp-ui";
 import logo from "../../assets/logo/banner-logo.png";
 
 interface Props {
@@ -8,12 +8,12 @@ interface Props {
 }
 
 const Content = ({ children }: Props) => {
-  //NAVIGATE
+  // NAVIGATE
   const navigate = useNavigate();
 
   return (
-    <Page className="page flex flex-col items-center bg-white">
-      <div className="flex flex-row justify-between w-full">
+    <div className="flex flex-col items-center bg-white h-full">
+      <div className="flex flex-row justify-between w-full p-2">
         <div
           className="border border-[#EFAE09] w-[30px] h-[30px] flex flex-row justify-center items-center p-[5px] rounded-full"
           onClick={() => navigate(-1)}
@@ -25,8 +25,8 @@ const Content = ({ children }: Props) => {
           <IconHeart fontSize={16} />
         </div>
       </div>
-      {children}
-    </Page>
+      <div className="flex-grow overflow-y-auto w-full px-4">{children}</div>
+    </div>
   );
 };
 
