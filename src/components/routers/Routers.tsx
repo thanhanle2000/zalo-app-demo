@@ -3,6 +3,7 @@ import AccountContainer from "pages/Account/AccountContainer";
 import CartContainer from "pages/Cart/CartContainer";
 import HomeContainer from "pages/Home";
 import ProductDetailContainer from "pages/Product/Detail";
+import SearchContainer from "pages/Search/SearchContainer";
 import React, { memo } from "react";
 import { Route } from "react-router-dom";
 import { AnimationRoutes } from "zmp-ui";
@@ -17,6 +18,7 @@ const Routers = () => {
         path={ROUTERS?.DETAIL_PRODUCT}
         element={<ProductDetailContainer />}
       ></Route>
+      <Route path={ROUTERS?.SEARCH} element={<SearchContainer />}></Route>
     </AnimationRoutes>
   );
 };

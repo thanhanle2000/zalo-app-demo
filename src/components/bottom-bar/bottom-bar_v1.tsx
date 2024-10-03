@@ -1,4 +1,10 @@
-import { IconArchive, IconHome, IconUser } from "@arco-design/web-react/icon";
+import {
+  IconApps,
+  IconArchive,
+  IconCustomerService,
+  IconHome,
+  IconUser,
+} from "@arco-design/web-react/icon";
 import { COLORS } from "core/constants/constants";
 import { ROUTERS } from "core/routers/routers";
 import React, { useState } from "react";
@@ -27,13 +33,27 @@ const BottomBar_V1: React.FC = () => {
     },
     {
       id: 2,
+      name: "Danh mục",
+      icon: <IconApps fontSize={25} />,
+      url: ROUTERS?.CATE,
+      className: "translate-x-0",
+    },
+    {
+      id: 3,
       name: "Trang chủ",
       icon: <IconHome fontSize={25} />,
       url: ROUTERS?.HOME,
       className: "translate-x-16",
     },
     {
-      id: 3,
+      id: 4,
+      name: "Liên hệ",
+      icon: <IconCustomerService fontSize={25} />,
+      url: ROUTERS?.CONTACT,
+      className: "translate-x-32",
+    },
+    {
+      id: 5,
       name: "Cá nhân",
       icon: <IconUser fontSize={25} />,
       url: ROUTERS?.ACCOUNT,
