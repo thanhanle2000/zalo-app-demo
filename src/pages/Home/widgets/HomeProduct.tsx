@@ -34,7 +34,7 @@ const HomeProduct = () => {
             className="m-[2px] rounded-[15px]"
           />
           <div className="flex flex-row items-start justify-between px-[5px]">
-            <span className="font-medium text-[14px]">{item?.label}</span>
+            <span className="font-semibold text-[14px]">{item?.label}</span>
             <div className="flex flex-row items-center gap-[3px]">
               <IconStar fontSize={20} className="text-yellow-500" />
               <span className="text-gray-500 text-[16px]">{item?.rate}</span>

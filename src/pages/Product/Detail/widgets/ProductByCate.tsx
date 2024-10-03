@@ -46,7 +46,7 @@ const ProductByCate = ({ productData, idActive }: Props) => {
               {item?.label}
             </span>
             <div className="flex flex-col items-start justify-start text-left px-[5px]">
-              <span className="text-[#82111A] text-[15px] font-semibold">
+              <span className="text-[#82111A] text-[15px] font-extrabold">
                 {formatCurrency(item?.price)}
               </span>
               <div className="flex flex-row items-center text-[13px] gap-[3px] text-gray-500">
@@ -54,7 +54,7 @@ const ProductByCate = ({ productData, idActive }: Props) => {
                 <span>{item?.sale / 1000}k</span>
               </div>
             </div>
-            <div className="absolute top-2 right-3 rounded-full flex flex-row items-center bg-white w-[20px] h-[20px]">
+            <div className="absolute top-2 right-2 rounded-full flex flex-row items-center bg-white w-[20px] h-[20px]">
               <IconHeart className="text-yellow-500 m-auto" fontSize={16} />
             </div>
           </div>

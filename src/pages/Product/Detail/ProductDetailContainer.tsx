@@ -28,12 +28,12 @@ const ProductDetailContainer = () => {
       setIsLoading(false);
     }, 400);
     return () => clearTimeout(timer);
-  }, []);
+  }, [active]);
 
   return (
     <Content>
       <Loading isLoading={isLoading} />
-      <div className="flex flex-col gap-[5px] mt-[10px] w-full">
+      <div className="flex flex-col gap-[5px] mt-[5px] w-full">
         <div className="m-auto">
           <CustomImage img={data?.img} width={300} />
         </div>
@@ -46,7 +46,7 @@ const ProductDetailContainer = () => {
             {data?.rate}
           </span>
         </div>
-        <span className="text-[#82111A] text-[20px] font-bold">
+        <span className="text-[#82111A] text-[20px] font-black">
           {formatCurrency(data?.price)}
         </span>
         <span className="text-[22px] font-semibold">{data?.label}</span>
