@@ -42,7 +42,7 @@ const ProductByCate = ({ productData, idActive }: Props) => {
               alt={item?.label}
               className="m-[2px] rounded-[15px]"
             />
-            <span className="font-medium text-[14px] truncate">
+            <span className="font-extrabold text-[14px] truncate">
               {item?.label}
             </span>
             <div className="flex flex-col items-start justify-start text-left px-[5px]">

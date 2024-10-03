@@ -26,10 +26,10 @@ const BottomBar_V1: React.FC = () => {
   const Menus: Menu[] = [
     {
       id: 1,
-      name: "Giỏ hàng",
-      icon: <IconArchive fontSize={25} />,
-      url: ROUTERS?.CART,
-      className: "translate-x-0",
+      name: "Trang chủ",
+      icon: <IconHome fontSize={25} />,
+      url: ROUTERS?.HOME,
+      className: "translate-x-16",
     },
     {
       id: 2,
@@ -38,22 +38,16 @@ const BottomBar_V1: React.FC = () => {
       url: ROUTERS?.CATE,
       className: "translate-x-0",
     },
+
     {
       id: 3,
-      name: "Trang chủ",
-      icon: <IconHome fontSize={25} />,
-      url: ROUTERS?.HOME,
-      className: "translate-x-16",
-    },
-    {
-      id: 4,
       name: "Liên hệ",
       icon: <IconCustomerService fontSize={25} />,
       url: ROUTERS?.CONTACT,
       className: "translate-x-32",
     },
     {
-      id: 5,
+      id: 4,
       name: "Cá nhân",
       icon: <IconUser fontSize={25} />,
       url: ROUTERS?.ACCOUNT,
@@ -62,7 +56,7 @@ const BottomBar_V1: React.FC = () => {
   ];
 
   // STATE
-  const [active, setActive] = useState<number>(1);
+  const [active, setActive] = useState<number>(0);
 
   // ON PAGE
   const onPage = (item: Menu, index: number) => {
@@ -72,7 +66,7 @@ const BottomBar_V1: React.FC = () => {
 
   return (
     <div
-      className="max-h-[50px] px-6 py-[2px] rounded-t-xl"
+      className="max-h-[50px] px-6 py-[2px]"
       style={{
         backgroundColor: COLORS?.BG,
       }}
@@ -81,9 +75,8 @@ const BottomBar_V1: React.FC = () => {
         <span
           className="bg-white duration-500 border-[4px] h-[55px] w-[55px] absolute -top-[28px] rounded-full flex justify-center items-center"
           style={{
-            left: `calc((100% / ${Menus.length}) * ${active} + (100% / ${
-              Menus.length * 2
-            }) - 32px)`,
+            left: `calc((100% / ${Menus.length}) * ${active} + (100% / ${Menus.length * 2
+              }) - 32px)`,
           }}
         >
           <span className="text-orange-500 text-2xl">{Menus[active].icon}</span>
@@ -98,9 +91,8 @@ const BottomBar_V1: React.FC = () => {
               onClick={() => onPage(menu, i)}
             >
               <span
-                className={`text-xl cursor-pointer duration-200 ${
-                  i === active ? "text-transparent" : "text-white"
-                }`}
+                className={`text-xl cursor-pointer duration-200 ${i === active ? "text-transparent" : "text-white"
+                  }`}
               >
                 {menu?.icon}
               </span>
