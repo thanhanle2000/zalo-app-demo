@@ -1,3 +1,32 @@
+@font-face {
+  font-family: 'FontHeebo';
+  src: url('../assets/font/Heebo-Regular.ttf') ;
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FontInter';
+  src: url('../assets/font/Inter_18pt-Regular.ttf') ;
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FontSFU';
+  src: url('../assets/font/SFUFuturaRegular.TTF') ;
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.sfu-font{
+  font-family: 'FontSFU';
+}
+.heebo-font{
+  font-family: 'FontHeebo';
+}
+.inter-font{
+  font-family: 'FontInter';
+}
 .page {
   padding: 16px 16px 96px 16px;
 }
