@@ -11,7 +11,7 @@ const Layout = () => {
 
   // IS CHECK
   const isCheck = location?.pathname === ROUTERS?.DETAIL_PRODUCT;
-
+//aaa
   return (
     <Box flex flexDirection="column" className="h-screen">
       <Box className="flex-1 flex flex-col overflow-hidden">
