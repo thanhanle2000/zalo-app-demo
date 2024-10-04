@@ -1,17 +1,19 @@
-import React, { memo, useState } from "react";
+import { CATES } from "core/db/mock/product";
+import React, { memo } from "react";
 import FlashSaleCountdown from "./FlashSale";
 
-const HomeFlashSale = () => {
+interface Props {
+  active: { id: number; cate: string };
+  setActive: (request: any) => void;
+}
+const HomeFlashSale = ({ active, setActive }: Props) => {
   // LST FLASH SALE
   const lst_flash_sale = [
-    { id: 1, label: "Tất cả" },
-    { id: 2, label: "Mới nhất" },
-    { id: 3, label: "Thời trang" },
-    { id: 4, label: "Công nghệ" },
+    { id: 1, label: "Tất cả", cate: "" },
+    { id: 2, label: "Nhà bếp", cate: CATES?.KITCHEN },
+    { id: 3, label: "Thời trang", cate: CATES?.CLOTHES },
+    { id: 4, label: "Công nghệ", cate: CATES?.ELECTRIC },
   ];
-
-  // STATE
-  const [active, setActive] = useState(2);
 
   return (
     <div className="flex flex-col my-[20px]">
@@ -24,13 +26,13 @@ const HomeFlashSale = () => {
           <div
             key={item?.id}
             className={`cursor-pointer border border-gray-400 rounded-[30px] h-[36px] flex flex-col justify-center ${
-              item?.id === active ? "bg-[#EFAE09]" : ""
+              item?.id === active?.id ? "bg-[#EFAE09]" : ""
             }`}
-            onClick={() => setActive(item?.id)}
+            onClick={() => setActive({ id: item?.id, cate: item?.cate })}
           >
             <span
               className={`p-[20px] ${
-                item?.id === active ? "text-white" : "text-black"
+                item?.id === active?.id ? "text-white" : "text-black"
               }`}
             >
               {item?.label}

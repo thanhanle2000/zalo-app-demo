@@ -21,4 +21,5 @@ const Layout = () => {
     </Box>
   );
 };
+
 export default memo(Layout);

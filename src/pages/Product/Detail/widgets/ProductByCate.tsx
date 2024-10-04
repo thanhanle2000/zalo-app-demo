@@ -3,14 +3,15 @@ import { setProduct } from "core/hook/recoil/recoil";
 import { ROUTERS } from "core/routers/routers";
 import React, { memo } from "react";
 import { useRecoilState } from "recoil";
-import { formatCurrency } from "ultils/helper";
+import { formatCurrency, whereConditions } from "ultils/helper";
 import { useNavigate } from "zmp-ui";
 
 interface Props {
   productData: any;
   idActive: number;
+  cate: string;
 }
-const ProductByCate = ({ productData, idActive }: Props) => {
+const ProductByCate = ({ productData, idActive, cate }: Props) => {
   // DATA
   const data = productData?.filter((item: any) => item.id !== idActive);
 
@@ -30,7 +31,7 @@ const ProductByCate = ({ productData, idActive }: Props) => {
     <div className="flex flex-col mt-[5px]">
       <span className="text-[15px] font-semibold">Sản phẩm cùng danh mục</span>
       <div className="flex flex-row gap-[8px] relative overflow-x-auto whitespace-nowrap scrollbar-hide mt-[10px]">
-        {data?.map((item: any) => (
+        {whereConditions(data, [{ cate: cate }])?.map((item: any) => (
           <div
             key={item?.id}
             className="border border-gray-400 flex flex-col gap-[3px] rounded-[15px] p-[3px] relative "

@@ -32,11 +32,12 @@ const ProductDetailContainer = () => {
   }, [active]);
 
   return (
-    <Content rightElement={
-      <div className="border border-[#EFAE09] w-[30px] h-[30px] flex flex-row justify-center items-center p-[5px] rounded-full">
-        <IconHeart fontSize={16} />
-      </div>
-    }
+    <Content
+      rightElement={
+        <div className="border border-[#EFAE09] w-[30px] h-[30px] flex flex-row justify-center items-center p-[5px] rounded-full">
+          <IconHeart fontSize={16} />
+        </div>
+      }
     >
       <Loading isLoading={isLoading} />
       <div className="flex flex-col gap-[5px] mt-[5px] mb-[70px] w-full">
@@ -61,7 +62,11 @@ const ProductDetailContainer = () => {
           <span className="text-left">{data?.description}</span>
         </div>
         <ProductByCate
-          {...{ productData: productData?.data ?? [], idActive: active?.id }}
+          {...{
+            productData: productData?.data ?? [],
+            idActive: active?.id,
+            cate: data?.cate,
+          }}
         />
       </div>
       <ProductOrder {...{ data }} />

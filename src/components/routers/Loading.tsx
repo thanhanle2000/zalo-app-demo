@@ -10,7 +10,7 @@ const Loading: React.FC<LoadingProps> = ({ isLoading }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
-      <div className="absolute inset-0 bg-gray-300 opacity-50"></div>
+      <div className="absolute inset-0 bg-gray-200 opacity-50"></div>
       <div className="relative flex items-center justify-center">
         <div className="absolute w-[75px] h-[75px] border-4 border-gray-200 border-t-transparent rounded-full animate-spin z-10"></div>
         <img
