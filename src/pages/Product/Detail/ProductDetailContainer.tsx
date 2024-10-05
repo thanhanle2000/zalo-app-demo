@@ -1,11 +1,12 @@
 import { IconHeart, IconStar } from "@arco-design/web-react/icon";
 import { CustomImage } from "components/image/CustomImage";
 import Content from "components/layout/Content";
-import Loading from "components/routers/Loading";
+import Loading from "components/loading/Loading";
 import { getProduct } from "core/hook/recoil/recoil";
 import React, { memo, useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { formatCurrency } from "ultils/helper";
+import logo from "../../../assets/logo/banner-logo.png";
 import productData from "../../../core/db/mock/product";
 import ProductByCate from "./widgets/ProductByCate";
 import ProductOrder from "./widgets/ProductOrder";
@@ -33,6 +34,7 @@ const ProductDetailContainer = () => {
 
   return (
     <Content
+      centerElement={<img src={logo} className="w-[80px]" />}
       rightElement={
         <div className="border border-[#EFAE09] w-[30px] h-[30px] flex flex-row justify-center items-center p-[5px] rounded-full">
           <IconHeart fontSize={16} />

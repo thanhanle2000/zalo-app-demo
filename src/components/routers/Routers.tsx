@@ -1,8 +1,10 @@
 import { ROUTERS } from "core/routers/routers";
 import AccountContainer from "pages/Account/AccountContainer";
 import CartContainer from "pages/Cart/CartContainer";
+import CateContainer from "pages/Cate/CateContainer";
 import HomeContainer from "pages/Home";
 import ProductDetailContainer from "pages/Product/Detail";
+import ResultsSearchContainer from "pages/Search/ResultsSearch/ResultsSearchContainer";
 import SearchContainer from "pages/Search/SearchContainer";
 import React, { memo } from "react";
 import { Route } from "react-router-dom";
@@ -19,6 +21,11 @@ const Routers = () => {
         element={<ProductDetailContainer />}
       ></Route>
       <Route path={ROUTERS?.SEARCH} element={<SearchContainer />}></Route>
+      <Route path={ROUTERS?.CATE} element={<CateContainer />}></Route>
+      <Route
+        path={ROUTERS?.RESULTS_SEARCH}
+        element={<ResultsSearchContainer />}
+      ></Route>
     </AnimationRoutes>
   );
 };

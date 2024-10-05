@@ -13,3 +13,17 @@ export const getProduct = selector({
   },
 });
 /* ----------- PRODUCT ----------- */
+
+/* ----------- SEARCH ----------- */
+export const setSearchs = atom<string>({
+  key: "setSearchs",
+  default: "",
+});
+
+export const getSearchs = selector({
+  key: "getSearchs",
+  get: ({ get }) => {
+    return get(setSearchs);
+  },
+});
+/* ----------- SEARCH ----------- */

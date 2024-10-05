@@ -5,6 +5,7 @@ import React, { memo } from "react";
 import { useRecoilState } from "recoil";
 import { formatCurrency, whereConditions } from "ultils/helper";
 import { useNavigate } from "zmp-ui";
+import { Product } from "../types/Detail.Res";
 
 interface Props {
   productData: any;
@@ -31,7 +32,7 @@ const ProductByCate = ({ productData, idActive, cate }: Props) => {
     <div className="flex flex-col mt-[5px]">
       <span className="text-[15px] font-semibold">Sản phẩm cùng danh mục</span>
       <div className="flex flex-row gap-[8px] relative overflow-x-auto whitespace-nowrap scrollbar-hide mt-[10px]">
-        {whereConditions(data, [{ cate: cate }])?.map((item: any) => (
+        {whereConditions(data, [{ cate: cate }])?.map((item: Product) => (
           <div
             key={item?.id}
             className="border border-gray-400 flex flex-col gap-[3px] rounded-[15px] p-[3px] relative "
@@ -43,9 +44,12 @@ const ProductByCate = ({ productData, idActive, cate }: Props) => {
               alt={item?.label}
               className="m-[2px] rounded-[15px]"
             />
-            <span className="font-extrabold text-[14px] truncate">
-              {item?.label}
-            </span>
+            <div className="flex flex-row items-start justify-between px-[5px]">
+              <span className="font-semibold text-[14px] truncate">
+                {item?.label}
+              </span>
+            </div>
+
             <div className="flex flex-col items-start justify-start text-left px-[5px]">
               <span className="text-[#82111A] text-[15px] font-extrabold">
                 {formatCurrency(item?.price)}

@@ -26,7 +26,6 @@ const BottomBar: React.FC = () => {
 
   // STATE
   const [active] = useState<number>(2);
-  const [tab, setTab] = useState(1);
 
   return (
     <div className="bg-white max-h-[4.4rem] px-6 py-[5px]">

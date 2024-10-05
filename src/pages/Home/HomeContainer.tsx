@@ -1,4 +1,4 @@
-import Loading from "components/routers/Loading";
+import Loading from "components/loading/Loading";
 import React, { memo, useEffect, useState } from "react";
 import { Page } from "zmp-ui";
 import logoBanner from "../../assets/logo/banner-logo.png";

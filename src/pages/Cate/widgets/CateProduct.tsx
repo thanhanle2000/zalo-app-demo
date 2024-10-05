@@ -1,17 +1,17 @@
 import { IconHeart, IconStar } from "@arco-design/web-react/icon";
 import productData from "core/db/mock/product";
+import { setProduct } from "core/hook/recoil/recoil";
 import { ROUTERS } from "core/routers/routers";
 import { Product } from "pages/Product/Detail/types/Detail.Res";
 import React, { memo } from "react";
-import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { formatCurrency, whereConditions } from "ultils/helper";
-import { setProduct } from "../../../core/hook/recoil/recoil";
+import { useNavigate } from "zmp-ui";
 
 interface Props {
-  active: { id: number; cate: string };
+  active: any;
 }
-const HomeProduct = ({ active }: Props) => {
+const CateProduct = ({ active }: Props) => {
   //NAVIGATE
   const navigate = useNavigate();
 
@@ -25,8 +25,8 @@ const HomeProduct = ({ active }: Props) => {
   };
 
   return (
-    <div className="grid grid-cols-2 gap-[8px] relative">
-      {whereConditions(productData?.data, [{ cate: active?.cate }])?.map(
+    <div className="grid grid-cols-2 gap-[8px] relative my-[10px]">
+      {whereConditions(productData?.data, [{ cate: active?.type }])?.map(
         (item: Product) => (
           <div
             key={item?.id}
@@ -72,5 +72,4 @@ const HomeProduct = ({ active }: Props) => {
     </div>
   );
 };
-
-export default memo(HomeProduct);
+export default memo(CateProduct);

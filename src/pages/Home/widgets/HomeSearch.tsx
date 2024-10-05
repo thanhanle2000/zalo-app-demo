@@ -18,7 +18,7 @@ const HomeSearch = () => {
         icon={<IconSearch fontSize={22} className="text-gray-500" />}
         onClick={() => navigate(ROUTERS?.SEARCH)}
       >
-        <span className="text-gray-500 text-[16px]">Search</span>
+        <span className="text-gray-500 text-[16px]">Tìm kiếm</span>
       </Button>
       <div
         className="rounded-full flex flex-row justify-center ml-[10px]"
