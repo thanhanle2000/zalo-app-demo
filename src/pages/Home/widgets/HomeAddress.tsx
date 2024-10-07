@@ -5,7 +5,10 @@ import {
 } from "@arco-design/web-react/icon";
 import React, { memo } from "react";
 
-const HomeAddress = () => {
+interface Props {
+  total: number;
+}
+const HomeAddress = ({ total }: Props) => {
   return (
     <div className="flex flex-row justify-between items-end mt-[5px]">
       <div className="flex flex-col gap-[5px]">
@@ -17,12 +20,12 @@ const HomeAddress = () => {
         </div>
       </div>
       <div className="relative inline-block">
-        <IconArchive style={{ fontSize: 25 }} />
+        <IconArchive style={{ fontSize: 28 }} />
         <span
-          className="absolute h-[12px] w-[12px] rounded-full bg-red-600 
-                    bottom-0 right-[-1px] flex items-center justify-center text-white text-[11px]"
+          className="absolute h-[20px] w-[20px] rounded-full bg-red-600 
+                    bottom-[-5px] right-[-4px] flex items-center justify-center text-white text-[11px]"
         >
-          1
+          {total}
         </span>
       </div>
     </div>

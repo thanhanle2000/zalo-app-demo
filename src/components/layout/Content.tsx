@@ -4,7 +4,7 @@ import { useNavigate } from "zmp-ui";
 
 interface Props {
   children?: ReactNode;
-  centerElement?: string;
+  centerElement?: string | ReactNode;
   rightElement?: ReactNode;
   className?: string;
 }

@@ -58,7 +58,9 @@ const ProductDetailContainer = () => {
         <span className="text-[#82111A] text-[20px] font-black">
           {formatCurrency(data?.price)}
         </span>
-        <span className="text-[22px] font-semibold">{data?.label}</span>
+        <span className="text-[22px] font-semibold leading-[25px]">
+          {data?.label}
+        </span>
         <div className="flex flex-col mt-[5px]">
           <span className="text-[15px] font-semibold">Thông tin sản phẩm</span>
           <span className="text-left">{data?.description}</span>

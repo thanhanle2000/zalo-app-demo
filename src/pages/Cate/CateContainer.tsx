@@ -1,13 +1,20 @@
 import Content from "components/layout/Content";
 import Loading from "components/loading/Loading";
 import { CATES } from "core/db/mock/cate";
+import { getCate } from "core/hook/recoil/recoil";
 import React, { memo, useEffect, useState } from "react";
+import { useRecoilValue } from "recoil";
 import CateHeader from "./widgets/CateHeader";
 import CateProduct from "./widgets/CateProduct";
 
 const CateContainer = () => {
+  // RCOIL
+  const _activeCate = useRecoilValue(getCate);
+
   // STATE
-  const [active, setActive] = useState({ type: CATES?.KITCHEN });
+  const [active, setActive] = useState({
+    type: _activeCate === "" ? CATES?.KITCHEN : _activeCate,
+  });
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

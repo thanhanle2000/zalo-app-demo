@@ -35,14 +35,14 @@ const ProductByCate = ({ productData, idActive, cate }: Props) => {
         {whereConditions(data, [{ cate: cate }])?.map((item: Product) => (
           <div
             key={item?.id}
-            className="border border-gray-400 flex flex-col gap-[3px] rounded-[15px] p-[3px] relative "
-            style={{ minWidth: "120px" }}
+            className="border border-gray-400 flex flex-col gap-[3px] rounded-[15px] p-[3px] relative"
+            style={{ width: "140px" }}
             onClick={() => onNextPage(item)}
           >
             <img
               src={item?.img}
               alt={item?.label}
-              className="m-[2px] rounded-[15px]"
+              className="m-[2px] rounded-[15px] min-w-[120px]"
             />
             <div className="flex flex-row items-start justify-between px-[5px]">
               <span className="font-semibold text-[14px] truncate">

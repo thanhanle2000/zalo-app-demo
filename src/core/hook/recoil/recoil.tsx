@@ -27,3 +27,26 @@ export const getSearchs = selector({
   },
 });
 /* ----------- SEARCH ----------- */
+
+/* ----------- CATE ----------- */
+export const setCate = atom<string>({
+  key: "setCate",
+  default: "",
+});
+
+export const getCate = selector({
+  key: "getCate",
+  get: ({ get }) => {
+    return get(setCate);
+  },
+});
+/* ----------- CATE ----------- */
+
+/* ----------- QUANTITY ----------- */
+export const setIsQuantity = atom({ key: "setIsQuantity", default: false });
+
+export const getIsQuantity = selector({
+  key: "getIsQuantity",
+  get: ({ get }) => get(setIsQuantity),
+});
+/* ----------- QUANTITY ----------- */
