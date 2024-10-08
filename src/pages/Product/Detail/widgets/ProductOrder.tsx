@@ -2,6 +2,7 @@ import { Badge, Button } from "@arco-design/web-react";
 import { IconArchive, IconMinus, IconPlus } from "@arco-design/web-react/icon";
 import { COLORS, DB_LOCAL } from "core/constants/constants";
 import { setIsQuantity } from "core/hook/recoil/recoil";
+import { ROUTERS } from "core/routers/routers";
 import React, { memo, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useRecoilState } from "recoil";
@@ -12,6 +13,7 @@ import {
   toastSuccess,
 } from "ultils/helper";
 import { useNavigate } from "zmp-ui";
+import { Product } from "../types/Detail.Res";
 
 interface Props {
   data: any;
@@ -37,16 +39,17 @@ const ProductOrder = ({ data }: Props) => {
   // REQUEST
   const request = {
     id: data?.id,
-    nameProduct: data?.nameProduct,
-    imageProduct: data?.imageProduct,
-    priceProduct: data?.priceProduct,
-    project: data?.project,
+    label: data?.label,
+    img: data?.img,
+    price: data?.price,
     quantity: quantity,
   };
 
   // UPDATE CART
   const updateCart = (newQuantity: number) => {
-    const existingProduct = cart?.find((item: any) => item?.id === request?.id);
+    const existingProduct = cart?.find(
+      (item: Product) => item?.id === request?.id
+    );
 
     if (existingProduct) existingProduct.quantity = newQuantity;
     else cart.push({ ...request, quantity: newQuantity });
@@ -57,7 +60,7 @@ const ProductOrder = ({ data }: Props) => {
   // HANDLE INCREASE QUANTITY
   const handleIncreaseQuantity = () => {
     toastSuccess("Thêm vào giỏ hàng thành công");
-    setQuantityState((prev: any) => {
+    setQuantityState((prev: Product | any) => {
       const newQuantity = prev + 1;
       updateCart(newQuantity);
       return newQuantity;
@@ -70,7 +73,7 @@ const ProductOrder = ({ data }: Props) => {
       const newQuantity = prev - 1;
 
       if (newQuantity === 0)
-        cart = cart.filter((item: any) => item?.id !== request?.id);
+        cart = cart?.filter((item: Product) => item?.id !== request?.id);
       else updateCart(newQuantity);
 
       setDataToLocal(DB_LOCAL?.CART_ORDER, cart);
@@ -80,7 +83,7 @@ const ProductOrder = ({ data }: Props) => {
 
   useEffect(() => {
     setQuantityState(
-      cart?.find((item: any) => item?.id === data?.id)?.quantity ?? 0
+      cart?.find((item: Product) => item?.id === data?.id)?.quantity ?? 0
     );
   }, [cart, location?.key]);
 
@@ -116,7 +119,10 @@ const ProductOrder = ({ data }: Props) => {
         </div>
       )}
       <div className="flex flex-row items-center text-center justify-center bg-white h-[48px]">
-        <div className="flex flex-col items-center p-[5px] bg-slate-100">
+        <div
+          className="flex flex-col items-center p-[5px] bg-slate-100"
+          onClick={() => navigate(ROUTERS?.CART)}
+        >
           <Badge count={cart?.length}>
             <IconArchive fontSize={24} />
           </Badge>

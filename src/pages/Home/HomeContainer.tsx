@@ -1,7 +1,6 @@
 import Loading from "components/loading/Loading";
 import { DB_LOCAL } from "core/constants/constants";
 import React, { memo, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { getDataToLocal } from "ultils/helper";
 import { Page } from "zmp-ui";
 import logoBanner from "../../assets/logo/banner-logo.png";
@@ -13,9 +12,6 @@ import HomeProduct from "./widgets/HomeProduct";
 import HomeSearch from "./widgets/HomeSearch";
 
 const HomeContainer = () => {
-  // USE LOCATION
-  const location = useLocation();
-
   // GET CART
   let cart = getDataToLocal(DB_LOCAL?.CART_ORDER) || [];
 

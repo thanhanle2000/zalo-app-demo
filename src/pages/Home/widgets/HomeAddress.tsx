@@ -3,12 +3,17 @@ import {
   IconDown,
   IconLocation,
 } from "@arco-design/web-react/icon";
+import { ROUTERS } from "core/routers/routers";
 import React, { memo } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   total: number;
 }
 const HomeAddress = ({ total }: Props) => {
+  // NAVIGATE
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-row justify-between items-end mt-[5px]">
       <div className="flex flex-col gap-[5px]">
@@ -19,7 +24,10 @@ const HomeAddress = ({ total }: Props) => {
           <IconDown />
         </div>
       </div>
-      <div className="relative inline-block">
+      <div
+        className="relative inline-block"
+        onClick={() => navigate(ROUTERS?.CART)}
+      >
         <IconArchive style={{ fontSize: 28 }} />
         <span
           className="absolute h-[20px] w-[20px] rounded-full bg-red-600 
