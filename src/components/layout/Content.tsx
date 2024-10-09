@@ -32,7 +32,9 @@ const Content = ({
         </span>
         <span>{rightElement}</span>
       </div>
-      <div className="flex-grow overflow-y-auto w-full px-4">{children}</div>
+      <div className="flex-grow overflow-y-auto w-full px-[10px]">
+        {children}
+      </div>
     </div>
   );
 };

@@ -60,7 +60,15 @@ const CartContainer = () => {
   }, 0);
 
   return (
-    <Content centerElement="Giỏ hàng" className="!bg-white">
+    <Content
+      centerElement="Giỏ hàng"
+      rightElement={
+        <span>
+          Tổng (<span className="text-[17px] font-bold">{cart?.length}</span>)
+        </span>
+      }
+      className="!bg-white"
+    >
       <Loading isLoading={loading} />
       <CartProducts
         {...{

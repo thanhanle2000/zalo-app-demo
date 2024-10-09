@@ -3,6 +3,7 @@ import AccountContainer from "pages/Account/AccountContainer";
 import CartContainer from "pages/Cart/CartContainer";
 import CateContainer from "pages/Cate/CateContainer";
 import HomeContainer from "pages/Home";
+import PaymentContainer from "pages/Payment/PaymentContainer";
 import ProductDetailContainer from "pages/Product/Detail";
 import ResultsSearchContainer from "pages/Search/ResultsSearch/ResultsSearchContainer";
 import SearchContainer from "pages/Search/SearchContainer";
@@ -26,6 +27,7 @@ const Routers = () => {
         path={ROUTERS?.RESULTS_SEARCH}
         element={<ResultsSearchContainer />}
       ></Route>
+      <Route path={ROUTERS?.PAYMENT} element={<PaymentContainer />}></Route>
     </AnimationRoutes>
   );
 };

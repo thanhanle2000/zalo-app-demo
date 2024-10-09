@@ -11,6 +11,7 @@ export const NO_BOTTOM_NAVIGATION_PAGES = [
   ROUTERS?.SEARCH,
   ROUTERS?.RESULTS_SEARCH,
   ROUTERS?.CART,
+  ROUTERS?.PAYMENT,
 ];
 
 export interface MenuItem {

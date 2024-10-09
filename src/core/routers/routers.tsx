@@ -8,4 +8,5 @@ export const ROUTERS = {
   ACCOUNT: "/account",
   CONTACT: "/contact",
   DETAIL_PRODUCT: "/detail_product",
+  PAYMENT: "/payment",
 };
