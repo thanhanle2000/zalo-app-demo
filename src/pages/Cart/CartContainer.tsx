@@ -5,13 +5,9 @@ import { getIsQuantity } from "core/hook/recoil/recoil";
 import React, { memo, useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { getDataToLocal, setDataToLocal } from "ultils/helper";
-import { useNavigate } from "zmp-ui";
 import CartProducts from "./widgets/CartProducts";
 
 const CartContainer = () => {
-  // USE NAVIGATE
-  const navigate = useNavigate();
-
   // RECOIL
   const isQuantity = useRecoilValue(getIsQuantity);
 

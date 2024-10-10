@@ -4,6 +4,7 @@ import CartContainer from "pages/Cart/CartContainer";
 import CateContainer from "pages/Cate/CateContainer";
 import HomeContainer from "pages/Home";
 import PaymentContainer from "pages/Payment/PaymentContainer";
+import PaymentAddAddress from "pages/Payment/widgets/PaymentAddAddress";
 import ProductDetailContainer from "pages/Product/Detail";
 import ResultsSearchContainer from "pages/Search/ResultsSearch/ResultsSearchContainer";
 import SearchContainer from "pages/Search/SearchContainer";
@@ -28,6 +29,10 @@ const Routers = () => {
         element={<ResultsSearchContainer />}
       ></Route>
       <Route path={ROUTERS?.PAYMENT} element={<PaymentContainer />}></Route>
+      <Route
+        path={ROUTERS?.PAYMENT_ADD_ADDRESS}
+        element={<PaymentAddAddress />}
+      ></Route>
     </AnimationRoutes>
   );
 };

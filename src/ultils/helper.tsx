@@ -1,3 +1,4 @@
+import { isEmpty } from "lodash";
 import { toast } from "react-toastify";
 
 // FORMAT CURRENCY
@@ -67,3 +68,12 @@ export const toastError = (text: string | any) => toast.error(text);
 
 // TOAST WARNING
 export const toastWarning = (text: string | any) => toast.warning(text);
+
+// TO LABEL ACTIVE
+export const toLabelActive = (data: any) => {
+  return { label: data?.name, value: data?.code };
+};
+
+// TO LABEL ARR ACTIVE
+export const toLabelArrActive = (array: any) =>
+  !isEmpty(array) ? array?.map((item: any) => toLabelActive(item)) : [];

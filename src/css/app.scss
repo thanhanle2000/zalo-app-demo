@@ -54,3 +54,11 @@
   border: 1px solid gray;
   border-radius: 12px !important;
 }
+
+.arco-form-label-item label
+{
+  display: flex;
+  flex-direction: row !important;
+  justify-items: center !important;
+  align-items: center;
+}

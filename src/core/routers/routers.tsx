@@ -9,4 +9,5 @@ export const ROUTERS = {
   CONTACT: "/contact",
   DETAIL_PRODUCT: "/detail_product",
   PAYMENT: "/payment",
+  PAYMENT_ADD_ADDRESS: "/payment_add_address",
 };
